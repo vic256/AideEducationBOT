@@ -5,7 +5,7 @@ module.exports = {
   description: 'Débannir un utilisateur',
   aliases: ['deban'],
   cooldown: 5,
-  usage: '[UTILISATEUR] [RAISON]',
+  usage: '[UTILISATEUR/ID] [RAISON]',
   args: true,
   guildOnly: true,
   execute(message, args, bot, embedfooter) {
