@@ -28,7 +28,7 @@ module.exports = {
       .setAuthor("AideEducation - Informations complémentaire")
       .setColor('RANDOM')
       .addField("Site web :", "https://aideeducation", true)
-      .addField("Plateforme de cours :", "https://cours.aideeducation", true)
+      .addField("Plateforme de cours :", "https://cours.aideeducation.fr", true)
       .addField("Twitter :", "https://twitter.com/AideEducationGD", true)
       .setFooter(embedfooter + " | Aide");
       //var guildmp = args[2]
