@@ -30,7 +30,7 @@ module.exports = {
           if (text.length === 0) return;
           message.channel.send("<:yes:556392507899117570>" + text.join(", ")+" a été ban.", {split:true});
           const ssancembed = require('../Fonctions/sanctionslog.js');
-          ssancembed (embedfooter, message, "Ban", text, rreason, message.author.username, "*Non définis*", "PERMANENT")
+          ssancembed (embedfooter, bot, "Ban", text, rreason, message.author.username, "*Non définis*", "PERMANENT")
       }, 1000);
     },
 };

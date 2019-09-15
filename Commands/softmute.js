@@ -45,7 +45,7 @@ module.exports = {
   await(tomute.addRole(muterole.id));
   message.channel.send(`<:yes:556392507899117570><@${tomute.id}> a été softmute pendant ${ms(ms(mutetime))}`);
   const ssancembed = require('../Fonctions/sanctionslog.js');
-  ssancembed (embedfooter, message, "SoftMute", tomute, rreason, message.author.username, "*Non définis*", mutetime)
+  ssancembed (embedfooter, bot, "SoftMute", tomute, rreason, message.author.username, "*Non définis*", mutetime)
 
   setTimeout(function() {
     tomute.removeRole(muterole.id);
