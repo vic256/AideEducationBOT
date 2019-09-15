@@ -101,6 +101,8 @@ bot.on('message', message => {
 	} catch (error) {
 		console.error(error);
 		message.reply("J'ai pas compris, une erreur est survenu quand j'ai voulu éxécuter la commande.");
+    const errorreport = require('./Fonctions/errorlog.js');
+    errorreport(error, commandName, message, bot)
 	}
 });
 
@@ -150,7 +152,8 @@ bot.on('message', async message => {
   let bwl4 = banwords.ListeL4
 
   //Define roles
-  let muterole = bot.guilds.get('497070140048015360').roles.find('id', "584434906944503808")
+  //let muterole = bot.guilds.get(botconfig.serverID).roles.find('id', botconfig.muteroleID)
+  let muterole = bot.guilds.get(botconfig.serverID).roles.find(muterole => muterole.id === botconfig.muteroleID)
 
   //Check if the word is in one of the lists
   if (bwl4.some(x => message.content.toLowerCase().split(/\s+/).includes(x))) {     
@@ -189,7 +192,7 @@ bot.on('message', async message => {
     .setTitle('**INFRACTION --> MOTS INTERDIT**')
     .setAuthor('AEMOD-LOG', 'http://vic256.zd.fr/files/AE/modemote.png')
     .setDescription(`**Utilisateur:** ${utilisateur}\n**Niveau infra:** ${level}\n**Sanction:** ${sanction}\n**Message:** ${msg}`)  
-    bot.channels.get('551668114459328527').send(logmsg)
+    bot.channels.get(botconfig.sanctionlog).send(logmsg)
   }
   //Warn embds
   function lvlembed(msgc, level, sanction) {
