@@ -1,0 +1,230 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'i', 'discord-anti-spam' ]
+2 info using npm@1.4.21
+3 info using node@v8.11.1
+4 warn package.json ffmpeg@0.0.4 No license field.
+5 warn package.json punycode@2.1.1 punycode is also the name of a node core module.
+6 warn package.json fs@0.0.1-security fs is also the name of a node core module.
+7 warn package.json json-schema@0.2.3 No license field.
+8 warn package.json optimist@0.6.1 license should be a valid SPDX license expression
+9 warn package.json os@0.1.1 os is also the name of a node core module.
+10 warn package.json string_decoder@1.3.0 string_decoder is also the name of a node core module.
+11 warn package.json util@0.12.1 util is also the name of a node core module.
+12 verbose cache add [ 'discord-anti-spam', null ]
+13 verbose cache add name=undefined spec="discord-anti-spam" args=["discord-anti-spam",null]
+14 verbose parsed url Url {
+14 verbose parsed url   protocol: null,
+14 verbose parsed url   slashes: null,
+14 verbose parsed url   auth: null,
+14 verbose parsed url   host: null,
+14 verbose parsed url   port: null,
+14 verbose parsed url   hostname: null,
+14 verbose parsed url   hash: null,
+14 verbose parsed url   search: null,
+14 verbose parsed url   query: null,
+14 verbose parsed url   pathname: 'discord-anti-spam',
+14 verbose parsed url   path: 'discord-anti-spam',
+14 verbose parsed url   href: 'discord-anti-spam' }
+15 silly lockFile 7bb0db1f-discord-anti-spam discord-anti-spam
+16 verbose lock discord-anti-spam /home/pi/.npm/7bb0db1f-discord-anti-spam.lock
+17 silly lockFile 7bb0db1f-discord-anti-spam discord-anti-spam
+18 silly lockFile 7bb0db1f-discord-anti-spam discord-anti-spam
+19 verbose addNamed [ 'discord-anti-spam', '' ]
+20 verbose addNamed [ null, '*' ]
+21 silly lockFile e45ba7ed-discord-anti-spam discord-anti-spam@
+22 verbose lock discord-anti-spam@ /home/pi/.npm/e45ba7ed-discord-anti-spam.lock
+23 silly addNameRange { name: 'discord-anti-spam', range: '*', hasData: false }
+24 verbose request where is /discord-anti-spam
+25 verbose request registry https://registry.npmjs.org/
+26 verbose request id 323c5fefd36ba901
+27 verbose url raw /discord-anti-spam
+28 verbose url resolving [ 'https://registry.npmjs.org/', './discord-anti-spam' ]
+29 verbose url resolved https://registry.npmjs.org/discord-anti-spam
+30 verbose request where is https://registry.npmjs.org/discord-anti-spam
+31 info trying registry request attempt 1 at 19:35:04
+32 verbose etag W/"88030894e0ae5b65d501cc58d27741d5"
+33 http GET https://registry.npmjs.org/discord-anti-spam
+34 http 200 https://registry.npmjs.org/discord-anti-spam
+35 silly registry.get cb [ 200,
+35 silly registry.get   { date: 'Sun, 20 Oct 2019 17:35:05 GMT',
+35 silly registry.get     'content-type': 'application/json',
+35 silly registry.get     'transfer-encoding': 'chunked',
+35 silly registry.get     connection: 'close',
+35 silly registry.get     'set-cookie':
+35 silly registry.get      [ '__cfduid=d63db3b85164347a3545b507708dd6fa11571592904; expires=Mon, 19-Oct-20 17:35:04 GMT; path=/; domain=.npmjs.org; HttpOnly' ],
+35 silly registry.get     'cf-cache-status': 'MISS',
+35 silly registry.get     'cache-control': 'max-age=300',
+35 silly registry.get     'cf-ray': '528cbf06a879a8cd-CDG',
+35 silly registry.get     etag: 'W/"5bd3508eae4a3cf01d38f7390ae6b069"',
+35 silly registry.get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+35 silly registry.get     'last-modified': 'Sat, 19 Oct 2019 18:06:09 GMT',
+35 silly registry.get     vary: 'accept-encoding, accept',
+35 silly registry.get     'x-amz-meta-rev': '21-51459c6a054a3b5768d6be516efcbe14',
+35 silly registry.get     server: 'cloudflare',
+35 silly registry.get     'content-encoding': 'gzip' } ]
+36 silly addNameRange number 2 { name: 'discord-anti-spam', range: '*', hasData: true }
+37 silly addNameRange versions [ 'discord-anti-spam',
+37 silly addNameRange   [ '1.0.0',
+37 silly addNameRange     '1.0.1',
+37 silly addNameRange     '1.0.2',
+37 silly addNameRange     '1.0.4',
+37 silly addNameRange     '1.0.5',
+37 silly addNameRange     '1.0.6',
+37 silly addNameRange     '1.0.7',
+37 silly addNameRange     '1.0.8',
+37 silly addNameRange     '1.0.9',
+37 silly addNameRange     '1.1.0',
+37 silly addNameRange     '1.1.1',
+37 silly addNameRange     '1.1.2',
+37 silly addNameRange     '1.1.4',
+37 silly addNameRange     '1.1.5',
+37 silly addNameRange     '1.1.6',
+37 silly addNameRange     '2.0.0',
+37 silly addNameRange     '2.0.1',
+37 silly addNameRange     '2.0.2',
+37 silly addNameRange     '2.0.3',
+37 silly addNameRange     '2.0.4' ] ]
+38 verbose addNamed [ 'discord-anti-spam', '2.0.4' ]
+39 verbose addNamed [ '2.0.4', '2.0.4' ]
+40 silly lockFile 98d5fa0d-discord-anti-spam-2-0-4 discord-anti-spam@2.0.4
+41 verbose lock discord-anti-spam@2.0.4 /home/pi/.npm/98d5fa0d-discord-anti-spam-2-0-4.lock
+42 silly lockFile b0da694e-spam-discord-anti-spam-2-0-4-tgz https://registry.npmjs.org/discord-anti-spam/-/discord-anti-spam-2.0.4.tgz
+43 verbose lock https://registry.npmjs.org/discord-anti-spam/-/discord-anti-spam-2.0.4.tgz /home/pi/.npm/b0da694e-spam-discord-anti-spam-2-0-4-tgz.lock
+44 verbose addRemoteTarball [ 'https://registry.npmjs.org/discord-anti-spam/-/discord-anti-spam-2.0.4.tgz',
+44 verbose addRemoteTarball   'a24542539de90c9538444e6294234f3efd1f7996' ]
+45 info retry fetch attempt 1 at 19:35:05
+46 verbose fetch to= /tmp/npm-15263-JEGQQc0G/registry.npmjs.org/discord-anti-spam/-/discord-anti-spam-2.0.4.tgz
+47 http GET https://registry.npmjs.org/discord-anti-spam/-/discord-anti-spam-2.0.4.tgz
+48 http 200 https://registry.npmjs.org/discord-anti-spam/-/discord-anti-spam-2.0.4.tgz
+49 silly lockFile b0da694e-spam-discord-anti-spam-2-0-4-tgz https://registry.npmjs.org/discord-anti-spam/-/discord-anti-spam-2.0.4.tgz
+50 silly lockFile b0da694e-spam-discord-anti-spam-2-0-4-tgz https://registry.npmjs.org/discord-anti-spam/-/discord-anti-spam-2.0.4.tgz
+51 silly lockFile 98d5fa0d-discord-anti-spam-2-0-4 discord-anti-spam@2.0.4
+52 silly lockFile 98d5fa0d-discord-anti-spam-2-0-4 discord-anti-spam@2.0.4
+53 silly lockFile e45ba7ed-discord-anti-spam discord-anti-spam@
+54 silly lockFile e45ba7ed-discord-anti-spam discord-anti-spam@
+55 silly resolved [ { name: 'discord-anti-spam',
+55 silly resolved     version: '2.0.4',
+55 silly resolved     description: 'An easy to setup package that help you integration of anti-spam feature in your discord bot.',
+55 silly resolved     main: 'index.js',
+55 silly resolved     scripts: { test: 'echo "Error: no test specified" && exit 1' },
+55 silly resolved     keywords:
+55 silly resolved      [ 'discord',
+55 silly resolved        'spam',
+55 silly resolved        'anti-spam',
+55 silly resolved        'discord.js',
+55 silly resolved        'antispam',
+55 silly resolved        'moderation',
+55 silly resolved        'bot',
+55 silly resolved        'plugin',
+55 silly resolved        'module' ],
+55 silly resolved     repository:
+55 silly resolved      { type: 'git',
+55 silly resolved        url: 'git+https://github.com/Michael-J-Scofield/discord-anti-spam.git' },
+55 silly resolved     bugs:
+55 silly resolved      { url: 'https://github.com/Michael-J-Scofield/discord-anti-spam/issues' },
+55 silly resolved     homepage: 'https://github.com/Michael-J-Scofield/discord-anti-spam#readme',
+55 silly resolved     author: { name: 'Michael Scofield' },
+55 silly resolved     license: 'MIT',
+55 silly resolved     gitHead: '8778d0a832baa25a8d18f89889a6f2832fae9d27',
+55 silly resolved     _id: 'discord-anti-spam@2.0.4',
+55 silly resolved     _nodeVersion: '12.10.0',
+55 silly resolved     _npmVersion: '6.10.3',
+55 silly resolved     dist:
+55 silly resolved      { integrity: 'sha512-JRtfD1LV/kpWfCIowxXR6ZW6+Nt8AVHyinZM6vKwtERZP5pE1+ZW0eGiByZllsIRtSUCoJXT9eMUMMLykQaW/g==',
+55 silly resolved        shasum: 'a24542539de90c9538444e6294234f3efd1f7996',
+55 silly resolved        tarball: 'https://registry.npmjs.org/discord-anti-spam/-/discord-anti-spam-2.0.4.tgz',
+55 silly resolved        fileCount: 4,
+55 silly resolved        unpackedSize: 12969,
+55 silly resolved        'npm-signature': '-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdq1COCRA9TVsSAnZWagAAu+UP/iL6w3f9333PAQXAqwPn\n+pelw+BM8hzcBYKnlFKOuB/OBez9DCd+3hIN0i7/+dPOOJEheZbRJWMPv75X\nBhkgOelWx2CYKHmqE1afeTYy6EFfHPsy+NxHUQQxxcnIg0PGklVxDE2f6/K2\newYgcEGgSBcWUL92Spoz15XycRjwnvS8j1h0VF2UPDUytg3ynqEtKocmNGw8\nyIXDbSYX0c8XYwC0i2gLGSVFFVck5TIK/T9H092ds4Th38YW8W91rQws/qs/\nLVAEDSAVkg0+Yp/DbmW1PxtCm6eep2f6EbCZWNVqaECgeTmv97oxIcIsZM1i\nyTdrCHNGOvyDpdimzL5xgI5oJdCSCFEtAYiE/o+lSDHnVbTqZmzFF+uL5EU3\n/Fc5j1uatIsQ624CMN6Iq9hP2zQa3TXDuYA7Rj9Yo5T7ERhcMCS23JiZlPVz\ncVGE3n6n6TONJ33fq9bgzwH3C/YDUJAXLPaGTRGDrIgEN4wi4umpEZhD0lD3\n5apLrDjsQLoezcCgDVQBWHTFjVBOJMRARj3uAW6+QFbDqtTIEJkv2Fq6K13k\nx2bLJ7M5owa3wGUz2fS/W/2ryXTe6y+Ojthy7HGMJWmvxLEM4RZapNOCSW+D\nyZkqEUarteSFza/3qPctLg2av78iD+idmyxELMDV9SgQTgS9FHFDMXlW58N9\nLvhR\r\n=DmCE\r\n-----END PGP SIGNATURE-----\r\n' },
+55 silly resolved     maintainers: [ [Object], [Object] ],
+55 silly resolved     _npmUser: { name: 'androz2091', email: 'androz2091@gmail.com' },
+55 silly resolved     directories: {},
+55 silly resolved     _npmOperationalInternal:
+55 silly resolved      { host: 's3://npm-registry-packages',
+55 silly resolved        tmp: 'tmp/discord-anti-spam_2.0.4_1571508365492_0.38519788525071386' },
+55 silly resolved     _hasShrinkwrap: false,
+55 silly resolved     _shasum: 'a24542539de90c9538444e6294234f3efd1f7996',
+55 silly resolved     _from: 'discord-anti-spam@',
+55 silly resolved     _resolved: 'https://registry.npmjs.org/discord-anti-spam/-/discord-anti-spam-2.0.4.tgz' } ]
+56 info install discord-anti-spam@2.0.4 into /home/pi/Documents/Victor/Victor/AideEducation/AideEducationBOT
+57 info installOne discord-anti-spam@2.0.4
+58 verbose node_modules/discord-anti-spam unbuild
+59 info preuninstall discord-anti-spam@2.0.0
+60 info uninstall discord-anti-spam@2.0.0
+61 verbose true,/home/pi/Documents/Victor/Victor/AideEducation/AideEducationBOT/node_modules,/home/pi/Documents/Victor/Victor/AideEducation/AideEducationBOT/node_modules unbuild discord-anti-spam@2.0.0
+62 info postuninstall discord-anti-spam@2.0.0
+63 verbose tar unpack /home/pi/.npm/discord-anti-spam/2.0.4/package.tgz
+64 silly lockFile 980d4ae7-T-node-modules-discord-anti-spam tar:///home/pi/Documents/Victor/Victor/AideEducation/AideEducationBOT/node_modules/discord-anti-spam
+65 verbose lock tar:///home/pi/Documents/Victor/Victor/AideEducation/AideEducationBOT/node_modules/discord-anti-spam /home/pi/.npm/980d4ae7-T-node-modules-discord-anti-spam.lock
+66 silly lockFile 87badb2c-cord-anti-spam-2-0-4-package-tgz tar:///home/pi/.npm/discord-anti-spam/2.0.4/package.tgz
+67 verbose lock tar:///home/pi/.npm/discord-anti-spam/2.0.4/package.tgz /home/pi/.npm/87badb2c-cord-anti-spam-2-0-4-package-tgz.lock
+68 silly gunzTarPerm modes [ '755', '644' ]
+69 silly gunzTarPerm extractEntry LICENSE
+70 silly gunzTarPerm extractEntry index.js
+71 silly gunzTarPerm extractEntry package.json
+72 silly gunzTarPerm extractEntry README.md
+73 silly lockFile 980d4ae7-T-node-modules-discord-anti-spam tar:///home/pi/Documents/Victor/Victor/AideEducation/AideEducationBOT/node_modules/discord-anti-spam
+74 silly lockFile 980d4ae7-T-node-modules-discord-anti-spam tar:///home/pi/Documents/Victor/Victor/AideEducation/AideEducationBOT/node_modules/discord-anti-spam
+75 silly lockFile 87badb2c-cord-anti-spam-2-0-4-package-tgz tar:///home/pi/.npm/discord-anti-spam/2.0.4/package.tgz
+76 silly lockFile 87badb2c-cord-anti-spam-2-0-4-package-tgz tar:///home/pi/.npm/discord-anti-spam/2.0.4/package.tgz
+77 info preinstall discord-anti-spam@2.0.4
+78 verbose readDependencies using package.json deps
+79 verbose readDependencies using package.json deps
+80 silly resolved []
+81 verbose about to build /home/pi/Documents/Victor/Victor/AideEducation/AideEducationBOT/node_modules/discord-anti-spam
+82 info build /home/pi/Documents/Victor/Victor/AideEducation/AideEducationBOT/node_modules/discord-anti-spam
+83 verbose linkStuff [ false,
+83 verbose linkStuff   false,
+83 verbose linkStuff   false,
+83 verbose linkStuff   '/home/pi/Documents/Victor/Victor/AideEducation/AideEducationBOT/node_modules' ]
+84 info linkStuff discord-anti-spam@2.0.4
+85 verbose linkBins discord-anti-spam@2.0.4
+86 verbose linkMans discord-anti-spam@2.0.4
+87 verbose rebuildBundles discord-anti-spam@2.0.4
+88 info install discord-anti-spam@2.0.4
+89 info postinstall discord-anti-spam@2.0.4
+90 warn unmet dependency /home/pi/Documents/Victor/Victor/AideEducation/AideEducationBOT/node_modules/cowsay requires get-stdin@'^5.0.1' but will load
+90 warn unmet dependency /home/pi/Documents/Victor/Victor/AideEducation/AideEducationBOT/node_modules/get-stdin,
+90 warn unmet dependency which is version 7.0.0
+91 warn unmet dependency /home/pi/Documents/Victor/Victor/AideEducation/AideEducationBOT/node_modules/cowsay requires string-width@'~2.1.1' but will load
+91 warn unmet dependency /home/pi/Documents/Victor/Victor/AideEducation/AideEducationBOT/node_modules/string-width,
+91 warn unmet dependency which is version 4.1.0
+92 warn unmet dependency /home/pi/Documents/Victor/Victor/AideEducation/AideEducationBOT/node_modules/cowsay requires strip-eof@'^1.0.0' but will load
+92 warn unmet dependency /home/pi/Documents/Victor/Victor/AideEducation/AideEducationBOT/node_modules/strip-eof,
+92 warn unmet dependency which is version 2.0.0
+93 warn unmet dependency /home/pi/Documents/Victor/Victor/AideEducation/AideEducationBOT/node_modules/ecc-jsbn requires jsbn@'~0.1.0' but will load
+93 warn unmet dependency /home/pi/Documents/Victor/Victor/AideEducation/AideEducationBOT/node_modules/jsbn,
+93 warn unmet dependency which is version 1.1.0
+94 warn unmet dependency /home/pi/Documents/Victor/Victor/AideEducation/AideEducationBOT/node_modules/jsprim requires extsprintf@'1.3.0' but will load
+94 warn unmet dependency /home/pi/Documents/Victor/Victor/AideEducation/AideEducationBOT/node_modules/extsprintf,
+94 warn unmet dependency which is version 1.4.0
+95 warn unmet dependency /home/pi/Documents/Victor/Victor/AideEducation/AideEducationBOT/node_modules/readable-stream requires isarray@'~1.0.0' but will load
+95 warn unmet dependency /home/pi/Documents/Victor/Victor/AideEducation/AideEducationBOT/node_modules/isarray,
+95 warn unmet dependency which is version 2.0.5
+96 warn unmet dependency /home/pi/Documents/Victor/Victor/AideEducation/AideEducationBOT/node_modules/readable-stream requires safe-buffer@'~5.1.1' but will load
+96 warn unmet dependency /home/pi/Documents/Victor/Victor/AideEducation/AideEducationBOT/node_modules/safe-buffer,
+96 warn unmet dependency which is version 5.2.0
+97 warn unmet dependency /home/pi/Documents/Victor/Victor/AideEducation/AideEducationBOT/node_modules/readable-stream requires string_decoder@'~1.1.1' but will load
+97 warn unmet dependency /home/pi/Documents/Victor/Victor/AideEducation/AideEducationBOT/node_modules/string_decoder,
+97 warn unmet dependency which is version 1.3.0
+98 warn unmet dependency /home/pi/Documents/Victor/Victor/AideEducation/AideEducationBOT/node_modules/request requires form-data@'~2.3.2' but will load
+98 warn unmet dependency /home/pi/Documents/Victor/Victor/AideEducation/AideEducationBOT/node_modules/form-data,
+98 warn unmet dependency which is version 2.5.1
+99 warn unmet dependency /home/pi/Documents/Victor/Victor/AideEducation/AideEducationBOT/node_modules/request requires qs@'~6.5.2' but will load
+99 warn unmet dependency /home/pi/Documents/Victor/Victor/AideEducation/AideEducationBOT/node_modules/qs,
+99 warn unmet dependency which is version 6.8.0
+100 warn unmet dependency /home/pi/Documents/Victor/Victor/AideEducation/AideEducationBOT/node_modules/request requires tough-cookie@'~2.4.3' but will load
+100 warn unmet dependency /home/pi/Documents/Victor/Victor/AideEducation/AideEducationBOT/node_modules/tough-cookie,
+100 warn unmet dependency which is version 3.0.1
+101 warn unmet dependency /home/pi/Documents/Victor/Victor/AideEducation/AideEducationBOT/node_modules/superagent requires readable-stream@'^3.4.0' but will load
+101 warn unmet dependency /home/pi/Documents/Victor/Victor/AideEducation/AideEducationBOT/node_modules/readable-stream,
+101 warn unmet dependency which is version 2.3.6
+102 error peerinvalid The package opusscript does not satisfy its siblings' peerDependencies requirements!
+102 error peerinvalid Peer prism-media@1.1.0 wants opusscript@^0.0.6
+103 error System Linux 4.14.79-v7+
+104 error command "/usr/bin/node" "/usr/bin/npm" "i" "discord-anti-spam"
+105 error cwd /home/pi/Documents/Victor/Victor/AideEducation/AideEducationBOT
+106 error node -v v8.11.1
+107 error npm -v 1.4.21
+108 error code EPEERINVALID
+109 verbose exit [ 1, true ]

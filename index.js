@@ -35,14 +35,19 @@ bot.on('message', function(message) {
 //Define commands
 bot.commands = new Discord.Collection();
 
-//Load commands
-const commandFiles = fs.readdirSync('./Commands').filter(file => file.endsWith('.js'));
+//Define categories & load commands
+const categories = ['moderation', 'fun', 'dev', 'general', 'owner'];
 
-for (const file of commandFiles) {
-	const command = require(`./Commands/${file}`);
-	bot.commands.set(command.name, command);
-	console.log('[AE] - ' + file + ' charged !')
-}
+categories.forEach(c => {
+	const commandFiles = fs.readdirSync(`./Commands/${c}`).filter(file => file.endsWith('.js'));
+	for (const file of commandFiles) {
+		const command = require(`./Commands/${c}/${file}`);
+		bot.commands.set(command.name, command);
+		console.log('[AE] - ' + file + ' charged in ' + c + ' !')
+	}
+
+})
+
 
 //Define cooldowns
 const cooldowns = new Discord.Collection();
