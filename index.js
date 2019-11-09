@@ -36,7 +36,7 @@ bot.on('message', function(message) {
 bot.commands = new Discord.Collection();
 
 //Define categories & load commands
-const categories = ['moderation', 'fun', 'dev', 'general', 'owner'];
+const categories = ['moderation', 'fun', 'general', 'owner'];
 
 categories.forEach(c => {
 	const commandFiles = fs.readdirSync(`./Commands/${c}`).filter(file => file.endsWith('.js'));
