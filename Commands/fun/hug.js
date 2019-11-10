@@ -6,7 +6,7 @@ module.exports = {
   description: 'Faite un câlin.',
   aliases: ['calin', 'câlin'],
   cooldown: 5,
-  usage: '[UTILISATEIR - Optionnel]',
+  usage: '[UTILISATEUR - Optionnel]',
   args: false,
   guildOnly: false,
   execute(message, args, bot, embedfooter) {
