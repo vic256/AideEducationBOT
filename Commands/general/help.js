@@ -21,7 +21,7 @@ module.exports = {
                  .addField(":smile: | Fun\n``dog``, ``cat``, ``cow``, ``cowsay``, ``kiss``, ``hug``, ``succes``", "** **")
                  .addField(":gift:  | New !\n``...``")
                  .setColor('RANDOM') // Couleur aléatoire
-                 .setFooter("AideEduation | >help [commande]") 
+                 .setFooter("AideEducation | >help [commande]") 
              message.author.send(embedhelpmember); // Envoie de l'embed en mp
              message.channel.send("**<:yes:556392507899117570> Le help vous a été envoyé par message privé.**")
       var msgp = new Discord.RichEmbed()
