@@ -19,7 +19,7 @@ module.exports = {
                  .addField(":hammer_pick: | Administration\n``say``, ``roleid``, ``checkinvites``", "** **")
                  .addField(":ok_hand: | Utile\n``help``, ``ping``, ``level``, ``userinfo``, ``member``, ``stats``, ``pp``, ``invite``, ``qrcode``, ``shorten``", "** **")
                  .addField(":smile: | Fun\n``dog``, ``cat``, ``cow``, ``cowsay``, ``kiss``, ``hug``, ``succes``", "** **")
-                 .addField(":gift:  | New !\n``...``")
+                 .addField(":gift:  | New !\n``...``", "** **")
                  .setColor('RANDOM') // Couleur aléatoire
                  .setFooter("AideEducation | >help [commande]") 
              message.author.send(embedhelpmember); // Envoie de l'embed en mp
