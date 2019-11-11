@@ -16,12 +16,12 @@ module.exports = {
                  .setTitle("**Liste des commandes**\n") // Titre
                  .setDescription('Le prefix est `<`, pour plus d\'information utilisez <help [COMMANDE] !')
                  .addField(":tools: | Modération\n``mute``, ``unmute``, ``softmute``, ``sunmute``, ``kick``, ``ban``, ``banid``", "** **")
-                 .addField(":hammer_pick: | Administration\n``say``, ``roleid``, ``checkinvites``", "** **")
+                 .addField(":hammer_pick: | Administration\n``say``", "** **")
                  .addField(":ok_hand: | Utile\n``help``, ``ping``, ``level``, ``userinfo``, ``member``, ``stats``, ``pp``, ``invite``, ``qrcode``, ``shorten``", "** **")
                  .addField(":smile: | Fun\n``dog``, ``cat``, ``cow``, ``cowsay``, ``kiss``, ``hug``, ``succes``", "** **")
                  .addField(":gift:  | New !\n``...``", "** **")
                  .setColor('RANDOM') // Couleur aléatoire
-                 .setFooter("AideEducation | >help [commande]") 
+                 .setFooter("AideEducation | <help [commande]") 
              message.author.send(embedhelpmember); // Envoie de l'embed en mp
              message.channel.send("**<:yes:556392507899117570> Le help vous a été envoyé par message privé.**")
       var msgp = new Discord.RichEmbed()
