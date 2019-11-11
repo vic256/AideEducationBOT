@@ -9,7 +9,7 @@ module.exports = {
   args: true,
   guildOnly: true,
   async execute(message, args, bot, embedfooter) {
-     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(`<:no:556392374172123137>  |  ${message.author.username}, vous n'avez pas la permission d'utilisé cette commande !`);
+     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(`<:no:556392374172123137>  |  ${message.author.username}, vous n'avez pas la permission d'utiliser cette commande !`);
 
     let tounmute = message.guild.member(message.mentions.users.first());
     if(!tounmute) return message.channel.send("<:no:556392374172123137>  | Utilisateur non trouvé.");

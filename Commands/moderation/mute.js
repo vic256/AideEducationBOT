@@ -5,15 +5,15 @@ module.exports = {
   description: 'Réduit au silence un utilisateur',
   aliases: ['chut'],
   cooldown: 5,
-  usage: '[UTILISATEUR] [TEMPS]',
+  usage: '[UTILISATEUR] [TEMPS] [RAISON]',
   args: true,
   guildOnly: true,
   async execute(message, args, bot, embedfooter) {
-      if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(`<:no:556392374172123137>  |  ${message.author.username}, vous n'avez pas la permission d'utilisé cette commande !`);
+      if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(`<:no:556392374172123137>  |  ${message.author.username}, vous n'avez pas la permission d'utiliser cette commande !`);
 
   let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(!tomute) return message.channel.send("<:no:556392374172123137> | Utilisateur non trouvé.");
-  if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("<:stafftools:442824123996176385> | Je ne peux pas mute un autre staff.");
+  if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("<:stafftools:594143336806350848> | Je ne peux pas mute un autre staff.");
   let muterole = message.guild.roles.find(`name`, "Muted");
   if(!muterole){
     try{
@@ -32,10 +32,10 @@ module.exports = {
       console.log(e.stack);
     }
   }
+    let mutetime = args[1];
+  if(!mutetime) return message.channel.send("<:no:556392374172123137> | Vous devez spécifiez un temps!");
   let rreason = args.slice(2).join(" ")
   if(!rreason) return message.channel.send(`<:no:556392374172123137>  |  ${message.author.username}, merci de renseigner une raison !`);
-  let mutetime = args[1];
-  if(!mutetime) return message.channel.send("<:no:556392374172123137> | Vous devez spécifiez un temps!");
   if(tomute.roles.has(muterole.id)) return message.channel.send("<:no:556392374172123137> | Cet utilisateur est déja mute !");
   await(tomute.addRole(muterole.id));
   message.channel.send(`<:yes:556392507899117570><@${tomute.id}> a été mute pendant ${ms(ms(mutetime))}`);

@@ -9,11 +9,11 @@ module.exports = {
   args: true,
   guildOnly: true,
   async execute(message, args, bot, embedfooter) {
-  	  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(`<:no:556392374172123137>  |  ${message.author.username}, vous n'avez pas la permission d'utilisé cette commande !`);
+  	  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(`<:no:556392374172123137>  |  ${message.author.username}, vous n'avez pas la permission d'utiliser cette commande !`);
 
   let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(!tomute) return message.channel.send("<:no:556392374172123137> | Utilisateur non trouvé.");
-  if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("<:no:556392374172123137> | Je ne peux pas softmute un autre modo/admin!");
+  if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("<:stafftools:594143336806350848> | Je ne peux pas softmute un autre staff !");
   let muterole = message.guild.roles.find(`name`, "Softmute");
   if(!muterole){
     try{
