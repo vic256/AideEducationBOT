@@ -19,7 +19,7 @@ module.exports = {
 
   message.guild.ban(args[0], reason).then(user => {
        message.channel.send(`<:yes:556392507899117570> | ${user.tag || user.id || args[0]}` + " à été ban");
-       const ssancembed = require('../Fonctions/sanctionslog.js');
+       const ssancembed = require('../../Fonctions/sanctionslog.js');
        ssancembed (embedfooter, bot, "BanID", `${user.tag || user.id || args[0]}`, reason, message.author.username, "*Non définis*", "PERMANENT")
    })
         if(args[0].kickable) {

@@ -8,6 +8,7 @@ module.exports = {
   args: true,
   guildOnly: true,
   execute(message, args, bot, embedfooter) {
+    const botconfig = require("../../Config/botconfig.json")
   	if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('Ceci est une commande en développement réservé au staff :neutral_face:'); //Pemission ? OK !
   	//Check edit
   	if(!args[1]) return message.channel.send(`<:no:556392374172123137>  |  ${message.author.username}, merci de rentrer une information a editer !`)
@@ -17,7 +18,7 @@ module.exports = {
       if (!Attachment){ return message.channel.send(`<:no:556392374172123137>  |  ${message.author.username}, vous avez oublier l'image :neutral_face: !`) }
         let msgid = args[0]
         let ataurl = Attachment[0].url
-        bot.channels.get('551668114459328527').fetchMessages({around: msgid, limit: 1})
+        bot.channels.get(botconfig.sandID).fetchMessages({around: msgid, limit: 1})
           .then(msg => {
             const fetchedMsg = msg.first();
             //console.log(fetchedMsg.embeds[0])
@@ -45,7 +46,7 @@ module.exports = {
     if(args[1] === "info") {
       if (!args[2]){ return message.channel.send(`<:no:556392374172123137>  |  ${message.author.username}, vous avez oublier la nouvelles information :neutral_face: !`) }
         let msgid = args[0]
-        bot.channels.get('551668114459328527').fetchMessages({around: msgid, limit: 1})
+        bot.channels.get(botconfig.sandID).fetchMessages({around: msgid, limit: 1})
           .then(msg => {
             const fetchedMsg = msg.first();
             //console.log(fetchedMsg.embeds[0])

@@ -29,7 +29,7 @@ module.exports = {
     setTimeout(function() {
         if (text.length === 0) return;
         message.channel.send("<:yes:556392507899117570>" + text.join(", ")+" a été kick.", {split:true});
-        const ssancembed = require('../Fonctions/sanctionslog.js');
+        const ssancembed = require('../../Fonctions/sanctionslog.js');
         ssancembed (embedfooter, bot, "Kick", text, rreason, message.author.username, "*Non définis*", "*Kick*")
     }, 1000);
   },

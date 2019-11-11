@@ -39,7 +39,7 @@ module.exports = {
   if(tomute.roles.has(muterole.id)) return message.channel.send("<:no:556392374172123137> | Cet utilisateur est déja mute !");
   await(tomute.addRole(muterole.id));
   message.channel.send(`<:yes:556392507899117570><@${tomute.id}> a été mute pendant ${ms(ms(mutetime))}`);
-  const ssancembed = require('../Fonctions/sanctionslog.js');
+  const ssancembed = require('../../Fonctions/sanctionslog.js');
   ssancembed (embedfooter, bot, "Mute", tomute, rreason, message.author.username, "*Non définis*", mutetime)
 
   setTimeout(function() {
