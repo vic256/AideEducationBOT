@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const botconfig = require("../../Config/botconfig.json");
 module.exports = {
   name: 'sanctionedit',
   description: 'Faire parler le bot (Commande Admin)',
@@ -18,7 +19,7 @@ module.exports = {
       if (!Attachment){ return message.channel.send(`<:no:556392374172123137>  |  ${message.author.username}, vous avez oublier l'image :neutral_face: !`) }
         let msgid = args[0]
         let ataurl = Attachment[0].url
-        bot.channels.get(botconfig.sandID).fetchMessages({around: msgid, limit: 1})
+        bot.channels.get(botconfig.sancID).fetchMessages({around: msgid, limit: 1})
           .then(msg => {
             const fetchedMsg = msg.first();
             //console.log(fetchedMsg.embeds[0])
@@ -46,7 +47,7 @@ module.exports = {
     if(args[1] === "info") {
       if (!args[2]){ return message.channel.send(`<:no:556392374172123137>  |  ${message.author.username}, vous avez oublier la nouvelles information :neutral_face: !`) }
         let msgid = args[0]
-        bot.channels.get(botconfig.sandID).fetchMessages({around: msgid, limit: 1})
+        bot.channels.get(botconfig.sancID).fetchMessages({around: msgid, limit: 1})
           .then(msg => {
             const fetchedMsg = msg.first();
             //console.log(fetchedMsg.embeds[0])
