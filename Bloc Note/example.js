@@ -1,11 +1,13 @@
-const snekfetch = require('snekfetch');
 const Discord = require("discord.js");
-
-module.exports.run = async (bot,message,args, embedfooter) => {
-
-
+module.exports = {
+  name: 'example',
+  description: 'Description',
+  aliases: ['example2'],
+  cooldown: 5,
+  //usage: '[TEXTE]',
+  args: false,
+  guildOnly: false,
+  execute(message, args, bot, embedfooter) {
+  	//Code
+  },
 };
-
-module.exports.help = {
-  name: "example"
-}
