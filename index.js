@@ -17,26 +17,21 @@ const prefix = botconfig.prefix
 //Define client
 const bot = new Discord.Client();
 
-//READY
-bot.on("ready", async () => {
-  console.log(`[AE-LOG] - ${bot.user.username} is online\nID : ${bot.user.id}`);
-  bot.user.setPresence({ game: { name: 'AideEducation | <help', type: 'WATCHING'} , status: 'idle'})
-  
+//Event Handler
+fs.readdir("./Events/", (err, files) => {
+  if (err) return console.error(err);
+  files.forEach(file => {
+    const event = require(`./Events/${file}`);
+    let eventName = file.split(".")[0];
+    bot.on(eventName, event.bind(null, bot));
+  });
 });
-
-//Send dm to console
-bot.on('message', function(message) {
-  if (message.author.bot) return;
-	const args = message.content.split(" ");
-	let text = args.slice(0).join(" ");
-	if(message.channel.type === 'dm') return console.log("Username : " + message.author.username + "#" + message.author.discriminator + ", ID : " + message.author.id + " --> " + text);
-})
 
 //Define commands
 bot.commands = new Discord.Collection();
 
 //Define categories & load commands
-const categories = ['moderation', 'fun', 'general', 'owner'];
+const categories = ['moderation', 'fun', 'general', 'owner', 'dev'];
 
 categories.forEach(c => {
 	const commandFiles = fs.readdirSync(`./Commands/${c}`).filter(file => file.endsWith('.js'));
@@ -111,35 +106,7 @@ bot.on('message', message => {
 	}
 });
 
-
-
-/*
-bot.on("message", message => {
-  const args = message.content.split(" ").slice(1);
-  const clean = text => {
-    if (typeof(text) === "string")
-      return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
-    else
-        return text;
-  }
-  if (message.content.startsWith(botconfig.prefix + "evalsystem")) {
-    if(message.author.id !== botconfig.ownerID) return;
-    try {
-      const code = args.join(" ");
-      let evaled = eval(code);
-
-      if (typeof evaled !== "string")
-        evaled = require("util").inspect(evaled);
-
-      message.channel.send(clean(evaled), {code:"xl"});
-    } catch (err) {
-      message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
-    }
-  }
-});
-*/
-
-//Badwords
+/*Badwords
 bot.on('message', async message => {
   if(message.channel.type === 'dm') return;
   //Define embed
@@ -196,7 +163,7 @@ bot.on('message', async message => {
     .setColor('#ff0000')
     .setTitle('**INFRACTION --> MOTS INTERDIT**')
     .setAuthor('AEMOD-LOG', 'http://vic256.zd.fr/files/AE/modemote.png')
-    .setDescription(`**Utilisateur:** ${utilisateur}\n**Niveau infra:** ${level}\n**Sanction:** ${sanction}\n**Message:** ${msg}`)  
+    .setDescription(`**Utilisateur:** ${utilisateur}\n**Sanction:** ${sanction}\n**Message:** ${msg}`)  
     bot.channels.get(botconfig.sanctionlog).send(logmsg)
   }
   //Warn embds
@@ -210,7 +177,7 @@ bot.on('message', async message => {
       message.author.send(lvlmsg)
   }
 
-}) 
+}) */
 
 //Bot login
 bot.login(tokenfile.token);
