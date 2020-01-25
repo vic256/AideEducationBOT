@@ -12,7 +12,6 @@ module.exports = {
   execute(message, args, bot, embedfooter) {
     const qrOutput = tempy.file({ extension: "png" });
     message.channel.startTyping();
-    if (args.length > -1) { 
         qrcode.toFile(qrOutput, args.slice(0).join(" "), { margin: 1 }, (error) => {
             if (error) throw new Error(error);
             message.channel.stopTyping();
@@ -24,9 +23,6 @@ module.exports = {
                 }]
             });
         });
-    }else{
-        message.channel.stopTyping();
-        message.reply("Quel texte souhaitez-vous mettre dans le qr code ? ");
-    }
+    
   },
 };

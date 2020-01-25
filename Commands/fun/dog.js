@@ -14,7 +14,7 @@ module.exports = {
 
 	  let dogembed = new Discord.RichEmbed()
 	  .setColor("#ff9900")
-	  .setTitle("Dog :dog:")
+	  .setTitle("Voici un chien :dog:")
 	  .setImage(body.url);
 	 message.channel.send(dogembed)
   },

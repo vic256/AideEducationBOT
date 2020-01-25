@@ -1,4 +1,6 @@
 const Discord = require("discord.js");
+const errorembed = require("../../Fonctions/errorembed.js")
+
 module.exports = {
   name: 'kick',
   description: 'Expulse l\'utilisateur du serveur',
@@ -10,19 +12,19 @@ module.exports = {
   execute(message, args, bot, embedfooter) {
       let has_kick = message.member.hasPermission("KICK_MEMBERS");
   let rreason = args.join(" ").slice(22);
-  if (!message.mentions.users.first()) return message.channel.send("<:no:556392374172123137> | Mentionné une ou plusieurs personne pour kick.")
-  if(!rreason) return message.channel.send("<:no:556392374172123137> | Veuillez indiquez une raison.");
-    if (!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(`<:no:556392374172123137>  |  ${message.author.username}, vous n'avez pas la permission d'utiliser cette commande !`)
+  if (!message.mentions.users.first()) return message.channel.send(errorembed("Mentionnez une personne à expulser.")) 
+  if(!rreason) return message.channel.send(errorembed("Merci d'indiquer une raison.")) 
+    if (!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(errorembed("Ta cru ? Vous n'avez pas la permission...")) 
 
     let ment = message.mentions.users;
     let text = []
     ment.forEach(m => {
         if (!message.guild.member(m).kickable) {
-            message.channel.send("<:no:556392374172123137> | Une chose m'empeche de kick : "+m.username + ".");
+            message.channel.send(errorembed("Il n'est pas possible d'expulser " + m.username)) 
         } else {
             message.guild.member(m).kick(rreason).then(() => {
                 text.push(m.username)
-            }).catch(err => message.channel.send("<:no:556392374172123137> | Une chose m'empeche de kick : "+m.username + "."))
+            }).catch(err => message.channel.send(errorembed("Je n'ai pas réussi à expluser " + m.username))) 
         }
     });
 

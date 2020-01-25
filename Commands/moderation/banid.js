@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const errorembed = require("../../Fonctions/errorembed.js")
 module.exports = {
   name: 'banid',
   description: 'Bannir un utilisateur avec son identifiant',
@@ -11,9 +12,9 @@ module.exports = {
       /*if (!message.guild.bot.user.hasPermission("BAN_MEMBERS")) {
        return message.channel.send(`<:no:556392374172123137>  |  ${message.author.username}, j'ai besoin de la permission de **ban** pour effectuez ceci !`);
      }*/
-  if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send(`<:no:556392374172123137> |  ${message.author.username}, vous n'avez pas la permission de **ban** pour effectuez ceci !`);
+  if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send(errorembed("Vous n'avez pas la permission : BANNIR UN UTILISATEUR"));
 
-     if(!args[0]) return message.channel.send("<:no:556392374172123137> | Utilisateur non trouvé!");
+     if(!args[0]) return message.channel.send(errorembed("L'utilisateur n'éxiste pas."));
 
      var reason = args.join(" ").slice(18) || "Aucune raison";
 
@@ -23,11 +24,11 @@ module.exports = {
        ssancembed (embedfooter, bot, "BanID", `${user.tag || user.id || args[0]}`, reason, message.author.username, "*Non définis*", "PERMANENT")
    })
         if(args[0].kickable) {
-          return message.channel.send(`<:no:556392374172123137>  |  ${message.author.username}, une erreur est survenue !`)
+          return message.channel.send(errorembed("Je ne peux pas bannir cet utilisateur."))
         }
 
       if (!args[0]) {
-           return message.channel.send("<:no:556392374172123137>| Une erreur est survenue.");
+           return message.channel.send(errorembed("."));
          }
   },
 };

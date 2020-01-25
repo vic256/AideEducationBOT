@@ -12,7 +12,7 @@ module.exports = {
         let ava = user.displayAvatarURL
         let embed = {
             color:0xff0000,
-            description:":bow_and_arrow: Voici l'avatar de "+ user.username+" *[url]("+ava+")*",
+            description:":bow_and_arrow: Avatar de : "+ user.username+"\n*[LIEN]("+ava+")*",
             image:{url:ava},
         }
      	message.channel.send("", {embed});

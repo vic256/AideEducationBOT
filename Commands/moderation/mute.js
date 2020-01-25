@@ -1,5 +1,6 @@
 const ms = require("ms");
 const Discord = require("discord.js");
+const errorembed = require("../../Fonctions/errorembed.js")
 module.exports = {
   name: 'mute',
   description: 'Réduit au silence un utilisateur',
@@ -9,11 +10,11 @@ module.exports = {
   args: true,
   guildOnly: true,
   async execute(message, args, bot, embedfooter) {
-      if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(`<:no:556392374172123137>  |  ${message.author.username}, vous n'avez pas la permission d'utiliser cette commande !`);
+      if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(errorembed("Ta cru ? Vous n'avez pas la permission..."));
 
   let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-  if(!tomute) return message.channel.send("<:no:556392374172123137> | Utilisateur non trouvé.");
-  if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("<:stafftools:594143336806350848> | Je ne peux pas mute un autre staff.");
+  if(!tomute) return message.channel.send(errorembed("Utilisateur inconnu..."));
+  if(tomute.hasPermission("MANAGE_MESSAGES")) return message.channel.send(errorembed("Je ne peux pas mute un membre de l'équipe."))
   let muterole = message.guild.roles.find(`name`, "Muted");
   if(!muterole){
     try{
@@ -33,10 +34,10 @@ module.exports = {
     }
   }
     let mutetime = args[1];
-  if(!mutetime) return message.channel.send("<:no:556392374172123137> | Vous devez spécifiez un temps!");
+  if(!mutetime) return message.channel.send(errorembed("Merci d'indiquer le temps de la sanction"));
   let rreason = args.slice(2).join(" ")
-  if(!rreason) return message.channel.send(`<:no:556392374172123137>  |  ${message.author.username}, merci de renseigner une raison !`);
-  if(tomute.roles.has(muterole.id)) return message.channel.send("<:no:556392374172123137> | Cet utilisateur est déja mute !");
+  if(!rreason) return message.channel.send(errorembed("Merci d'indiquer une raison..."));
+  if(tomute.roles.has(muterole.id)) return message.channel.send(errorembed("Cet utilisateur est déjà aux enfers... Le réduire au silence deux fois est inutile."));
   await(tomute.addRole(muterole.id));
   message.channel.send(`<:yes:556392507899117570><@${tomute.id}> a été mute pendant ${ms(ms(mutetime))}`);
   const ssancembed = require('../../Fonctions/sanctionslog.js');

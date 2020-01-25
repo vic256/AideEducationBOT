@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 module.exports = {
   name: 'userinfo',
-  description: 'Faire parler le bot (Commande Admin)',
+  description: 'Donne les informations d\'un utilisateur',
   aliases: ['ui', 'user'],
   cooldown: 5,
   usage: '[UTILISATEUR - Optionnel]',
@@ -18,14 +18,14 @@ module.exports = {
       }
     })
   } else {
-    roles = "no";
+    roles = ".";
   }
-  let ttt = (member.roles.size > 0) ? roles.length : "0";
-  let wato = (roles.length > 0) ? roles.join(", ") : "None";
-  let game = (!!user.presence && user.presence !== null && user.presence.game !== null && user.presence.game.name !== null) ? user.presence.game.name : "Nothing"
+  let rolesl = (member.roles.size > 0) ? roles.length : "0";
+  let roles2 = (roles.length > 0) ? roles.join(", ") : "Aucun rôle... Comment est-ce possible ?";
+  let game = (!!user.presence && user.presence !== null && user.presence.game !== null && user.presence.game.name !== null) ? user.presence.game.name : "Ne fais rien d'inutile."
   let embed = {
     author: {
-      name: "Qui e: " + user.username,
+      name: user.username,
       icon_url: (user.avatarURL !== null) ? user.avatarURL : "https://maxcdn.icons8.com/Share/icon/Logos//discord_logo1600.png"
     },
     color: 0x47D70C,
@@ -61,8 +61,8 @@ module.exports = {
       value: user.createdAt,
       inline: true
     }, {
-      name: "Roles (" + ttt + ")",
-      value: wato,
+      name: "Roles (" + rolesl + ")",
+      value: roles2,
       inline: true
     }]
   }

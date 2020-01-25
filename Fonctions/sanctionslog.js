@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 function ssancembed(embedfooter, bot, sanction, user, raison, auteur, infcomp, time) {
-	const botconfig = require("../Config/botconfig.json")
-	let channellog = bot.channels.find(channel => channel.id === botconfig.sancID)
+	const config = require("../Config/config.js")
+	let channellog = bot.channels.find(channel => channel.id === config.server[1].channels.sanction)
   	  	channellog.send("Informations en chargement...").then(messagex => {
 	  	  let ssanc = new Discord.RichEmbed()
 		  	  .setColor('#ff0000')

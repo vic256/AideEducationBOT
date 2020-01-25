@@ -14,7 +14,7 @@ module.exports = {
 
 	  let catembed = new Discord.RichEmbed()
 	  .setColor("#ff9900")
-	  .setTitle("Cat :cat:")
+	  .setTitle("Voici un chat :cat:")
 	  .setImage(body.file);
 
 	  message.channel.send(catembed)

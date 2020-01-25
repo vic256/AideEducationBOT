@@ -4,7 +4,7 @@ BETA 0.2
 */
 
 //Define the configs files
-const botconfig = require("./Config/botconfig.json");
+const config = require("./Config/config.js")
 const tokenfile = require("./Config/token.json");
 
 //Define modules
@@ -12,10 +12,13 @@ const Discord = require("discord.js");
 const fs = require("fs");
 
 //Define prefix
-const prefix = botconfig.prefix
+const prefix = config.prefix
 
 //Define client
 const bot = new Discord.Client();
+
+//Define Error Client Report
+const errorembed = require("./Fonctions/errorembed.js")
 
 //Event Handler
 fs.readdir("./Events/", (err, files) => {
@@ -29,9 +32,10 @@ fs.readdir("./Events/", (err, files) => {
 
 //Define commands
 bot.commands = new Discord.Collection();
+bot.queue = new Map();
 
 //Define categories & load commands
-const categories = ['moderation', 'fun', 'general', 'owner', 'dev'];
+const categories = ['moderation', 'fun', 'general'];
 
 categories.forEach(c => {
 	const commandFiles = fs.readdirSync(`./Commands/${c}`).filter(file => file.endsWith('.js'));
@@ -61,7 +65,7 @@ bot.on('message', message => {
 
 	//Check the parameters of the command
 	if (command.guildOnly && message.channel.type !== 'text') { 
-		return message.reply(':x: Je ne peux pas éxécuter cette commande dans un salon privé.'); 
+		return message.channel.send(errorembed("Je ne peux pas éxectuter cette commande dans un salon privé."))
 	}
 
 	if (command.args && !args.length) {
@@ -71,7 +75,7 @@ bot.on('message', message => {
 			reply += `\nUtilisez: \`${prefix}${command.name} ${command.usage}\``;
 		}
 
-		return message.channel.send(reply);
+		return message.channel.send(errorembed(reply));
 	}
 
 	//Check cooldowns
@@ -88,7 +92,7 @@ bot.on('message', message => {
 
 		if (now < expirationTime) {
 			const timeLeft = (expirationTime - now) / 1000;
-			return message.reply(`:x: Merci d'attendre ${timeLeft.toFixed(1)} secondes avant d'éxécutez \`${command.name}\` une nouvelle fois.`);
+      return message.channel.send(errorembed(`Merci d'attendre ${timeLeft.toFixed(1)} secondes avant d'éxécutez "${command.name}".`))
 		}
 	}
 
@@ -99,8 +103,8 @@ bot.on('message', message => {
     	let embedfooter = "AideEducation BETA "
 		command.execute(message, args, bot, embedfooter);
 	} catch (error) {
-		console.error(error);
-		message.reply("J'ai pas compris, une erreur est survenu quand j'ai voulu éxécuter la commande.");
+		message.channel.send(errorembed("Une erreur est survenue lors de l'éxécution de la commande. Le support a été prévenu."));
+    console.error(error);
     const errorreport = require('./Fonctions/errorlog.js');
     errorreport(error, commandName, message, bot)
 	}
@@ -117,7 +121,7 @@ bot.on('message', async message => {
 	  .setDescription(message.author + " a dit un mot pas gentil :cry:\nPour calmer les esprits voici une photo")
 	  .setImage('http://vic256.zd.fr/files/AE/chat.jpg')
   //Define lists
-  let banwords = require("./Db/words.json")
+  let banwords = require("./DataBase/words.json")
   let bwl1 = banwords.ListeL1
   let bwl2 = banwords.ListeL2
   let bwl3 = banwords.ListeL3
